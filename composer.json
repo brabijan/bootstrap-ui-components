@@ -1,0 +1,27 @@
+{
+	"name": "brabijan/bootstrap-ui-components",
+	"type": "library",
+	"description": "Components integratng Twitter Bootstrap into Nette framework projects",
+	"keywords": ["nette", "twitter bootstrap"],
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Jan Brabec"
+		}
+	],
+	"support": {
+		"email": "brabijan@gmail.com",
+		"issues": "https://github.com/brabijan/bootstrap-ui-components/issues"
+	},
+	"require": {
+		"nette/nette": ">= 2.0.5"
+	},
+	"require-dev": {
+		"nette/tester": "@dev"
+	},
+	"autoload": {
+		"psr-0": {
+			"Brabijan\\": "src/"
+		}
+	}
+}

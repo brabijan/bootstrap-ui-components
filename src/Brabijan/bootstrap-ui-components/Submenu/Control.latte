@@ -1,0 +1,19 @@
+{block}
+	{if $isVisible}
+		<div class="well sidebar-nav">
+			<ul class="nav nav-list">
+				{foreach $submenu as $section}
+					<li class="nav-header">{$section->sectionName}</li>
+					{foreach $section->items as $item}
+						<li n:if="$item->render" n:class="$presenter->isLinkCurrent($item->destination, $item->args) ? active">
+							{define #attributes}{if count($item->attributes)!=0}{foreach $item->attributes as $name => $value} {$name}="{$value}"{/foreach}{/if}{/define}
+							<a href="{plink $item->destination (expand) count($item->args)==0 ? array() : $item->args}"{include #attributes}>
+								{$item->text}
+							</a>
+						</li>
+					{/foreach}
+				{/foreach}
+			</ul>
+		</div>
+	{/if}
+{/block}
