@@ -1,6 +1,6 @@
 <?php
 
-namespace Brabijan\TwitterBootstrapUI\DI;
+namespace Brabijan\BootstrapUIComponents\DI;
 
 use Nette,
 	Nette\Config\Compiler,
@@ -9,14 +9,14 @@ use Nette,
 /**
  * @author Jan Brabec <brabijan@gmail.com>
  */
-class TwitterBootstrapUIExtension extends Nette\Config\CompilerExtension
+class BootstrapUIExtension extends Nette\Config\CompilerExtension
 {
 
 	public function loadConfiguration()
 	{
 		$builder = $this->getContainerBuilder();
 		$builder->addDefinition($this->prefix('SubmenuFactory'))
-			->setClass('Brabijan\TwitterBootstrapUI\Submenu\Factory');
+			->setClass('Brabijan\BootstrapUIComponents\Submenu\Factory');
 
 	}
 
@@ -26,10 +26,10 @@ class TwitterBootstrapUIExtension extends Nette\Config\CompilerExtension
 	 * @param Configurator $config
 	 * @param string $extensionName
 	 */
-	public static function register(Configurator $config, $extensionName = 'twitterBootstrapUIExtension')
+	public static function register(Configurator $config, $extensionName = 'bootstrapUIExtension')
 	{
 		$config->onCompile[] = function (Configurator $config, Compiler $compiler) use ($extensionName) {
-			$compiler->addExtension($extensionName, new TwitterBootstrapUIExtension());
+			$compiler->addExtension($extensionName, new BootstrapUIExtension());
 		};
 	}
 

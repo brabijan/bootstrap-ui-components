@@ -1,6 +1,6 @@
 <?php
 
-namespace Brabijan\TwitterBootstrapUI\Submenu;
+namespace Brabijan\BootstrapUIComponents\Submenu;
 
 use Nette;
 
